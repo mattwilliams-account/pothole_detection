@@ -11,7 +11,7 @@ load_dotenv()
 # project directory
 #project_name = os.path.basename(os.getcwd())
 #scratch_dir = os.path.join(os.environ.get("SCRATCH", "/anvil/scratch/x-ajana1"), project_name)
-scratch_dir = os.path.join("C:\Users\willi\OneDrive\Documents\School\Spring 2026\CS-481 ML\project")
+scratch_dir = os.path.join("C:\Users\willi\OneDrive\Documents\School\Spring 2026\CS-481 ML\ml_project\CS-481-project\pothole_detection")
 
 # paths
 dataset_dir = os.path.join(scratch_dir, "datasets", "300-300_road_img")
