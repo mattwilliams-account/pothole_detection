@@ -27,8 +27,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Ignore dataset [its too big]
+# Ignore dataset [its too big] and maybe python env [idk if we really need to but i did]
 datasets/
+# project_env/
 
 
 # PyInstaller
