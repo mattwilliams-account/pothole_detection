@@ -2,9 +2,12 @@
 CS-481 Machine Learning project 
 
 # models tested
-- llava-7b
-- YOLOv8
+- YOLOv8-nano
+- YOLOv8-medium
+- YOLOv8-extra large
+  
 # final model used 
-- YOLOv8
+- YOLOv8-
+  
 # required packages (pip)
 - ultralytics
