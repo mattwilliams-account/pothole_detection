@@ -1,6 +1,5 @@
 # pothole_detection
 CS-481 Machine Learning project 
-
 # models tested
 - llava-7b
 - YOLOv8
