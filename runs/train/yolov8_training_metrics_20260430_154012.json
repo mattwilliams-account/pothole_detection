@@ -1,0 +1,46 @@
+{
+  "run_name": "yolov8_training",
+  "timestamp": "2026-04-30T15:40:12.517082",
+  "config": {
+    "model": "yolov8n.pt",
+    "data": "datasets/data.yaml",
+    "epochs": 25,
+    "imgsz": 640,
+    "batch": 16,
+    "device": "",
+    "patience": 50
+  },
+  "val_metrics": {
+    "metrics/precision(B)": 0.6469133055276821,
+    "metrics/recall(B)": 0.5399686166872683,
+    "metrics/mAP50(B)": 0.5749080446185606,
+    "metrics/mAP50-95(B)": 0.22216532445687012,
+    "fitness": 0.22216532445687012,
+    "box/map": 0.22216532445687012,
+    "box/map50": 0.5749080446185606,
+    "box/map75": 0.12409752563733661,
+    "box/mp": 0.6469133055276821,
+    "box/mr": 0.5399686166872683,
+    "speed/preprocess": 0.5835858083173662,
+    "speed/inference": 20.388270308315743,
+    "speed/loss": 3.899164463897857e-05,
+    "speed/postprocess": 0.2928177750012158
+  },
+  "test_metrics": {
+    "metrics/precision(B)": 0.6495677081685184,
+    "metrics/recall(B)": 0.5448028673835126,
+    "metrics/mAP50(B)": 0.5805761764166282,
+    "metrics/mAP50-95(B)": 0.21641867510130336,
+    "fitness": 0.21641867510130336,
+    "box/map": 0.21641867510130336,
+    "box/map50": 0.5805761764166282,
+    "box/map75": 0.10957864837013384,
+    "box/mp": 0.6495677081685184,
+    "box/mr": 0.5448028673835126,
+    "speed/preprocess": 0.6238708386761925,
+    "speed/inference": 23.377552709638213,
+    "speed/loss": 5.235482779924848e-05,
+    "speed/postprocess": 0.35638640325017945
+  },
+  "best_weights": "not found"
+}

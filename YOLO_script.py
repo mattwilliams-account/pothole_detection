@@ -22,6 +22,7 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
+import torch
 from ultralytics import YOLO
 
 
@@ -32,7 +33,7 @@ from ultralytics import YOLO
 DEFAULT_CONFIG = {
     "model":        "yolov8n.pt",   # Pretrained weights: n / s / m / l / x
     "data_yaml":    "datasets/data.yaml",
-    "epochs":       100,
+    "epochs":       25,
     "imgsz":        640,
     "batch":        16,
     "device":       "",             # "" = auto-detect (GPU if available)
@@ -41,6 +42,24 @@ DEFAULT_CONFIG = {
     "output_folder": "runs/train",
     "project_name": "yolov8_training",
 }
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Device Resolution
+# ──────────────────────────────────────────────────────────────────────────────
+
+def resolve_device(device_arg: str) -> str:
+    if device_arg != "":
+        return device_arg
+    
+    if torch.cuda.is_available():
+        n = torch.cuda.device_count()
+        device = "".join(str(i) for i in range(n))
+        names = [torch.cuda.get_device_name(i) for i in range(n)]
+        print(f" GPU detected: {', '.join(names)} -> device='{device}'")
+        return device
+    
+    print(" No GPU detected, using CPU.")
+    return "cpu"
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -120,6 +139,9 @@ def train(args: argparse.Namespace) -> None:
     if not data_yaml.exists():
         raise FileNotFoundError(f"data.yaml not found at: {data_yaml.resolve()}")
 
+    # ── Resolve Device ────────────────────────────────────────
+    device = resolve_device(args.device)
+
     print(f"\n{'='*60}")
     print("  YOLOv8 Training Script")
     print(f"{'='*60}")
@@ -128,7 +150,7 @@ def train(args: argparse.Namespace) -> None:
     print(f"  Epochs      : {args.epochs}")
     print(f"  Image size  : {args.imgsz}")
     print(f"  Batch size  : {args.batch}")
-    print(f"  Device      : {'auto' if args.device == '' else args.device}")
+    print(f"  Device      : {device}")
     print(f"  Output      : {args.output_folder}")
     print(f"{'='*60}\n")
 
