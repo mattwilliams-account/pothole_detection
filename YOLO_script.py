@@ -41,7 +41,7 @@ DEFAULT_CONFIG = {
     "patience":     50,             # Early-stopping patience (epochs)
     "output_folder": "runs/train",
     "project_name": "yolov8_training",
-}
+} 
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Device Resolution
