@@ -17,7 +17,7 @@ CS-481 Machine Learning project
   - Login to Anvil: " ssh <user_name>@anvil.rcac.purdue.edu "
   - cd to location of directory with scripts
   - Load conda module for python: " module load anaconda "
-  - create python env to install dependincies: " python3 -m venv my_venv1 "
+  - create python env to install dependencies: " python3 -m venv my_venv1 "
   - activate environment: " source my_venv1/bin/activate "
   - update pip: " pip install -- upgrade pip "
   - install ultralytics & Pytorch: " pip install ultralytics torch "
