@@ -4,11 +4,11 @@ CS-481 Machine Learning project
 # Dataset
 - https://universe.roboflow.com/gerapothole/pothole-detection-yolov8/dataset/1
 
-# required packages (pip)
+# Required packages (pip)
 - ultralytics
 - torch (Pytorch)
 
-# Instructions to setup project (with anvil)
+# Instructions to setup project
 - Upload downloaded scripts from github or clone repo using git (if manually uploading files: keep files in the same directory)
 - In the same directory the scripts are in, create a directory named "datasets" and move the dataset into this directory
 - Again in the directory consisting of the scripts, create a directory named "models" 
@@ -34,8 +34,11 @@ CS-481 Machine Learning project
   - run the script: " python3 YOLO_script.py "
   - Results will be provided in the "runs" directory created after script completetion.
   
-# model used 
+# Model used 
 - YOLOv8-nano
   
-# example results
+# Example results
 - the "runs1" directory in repo provides examples of results generated from running the script.
+  
+# Possible expansion
+- this project could be expanded upon with the use of different size YOLOv8 models that have more capabilities to detect smaller images and allow for a more complete comparison between model performance and dataset instablity. 
